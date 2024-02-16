@@ -93,7 +93,6 @@ export default {
                     password_confirmation: state.passwordConfirm,
                 }).then((res) => {
                     localStorage.setItem('access_token', res.data.access_token)
-                    localStorage.setItem('user', JSON.stringify(res.data.user))
                     router.push('/')
                 }).catch(error => {
                     state.errorEmail = error.response.data.message

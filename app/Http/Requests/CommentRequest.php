@@ -22,7 +22,6 @@ class CommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer|exists:App\Models\User,id',
             'news_id' => 'required|integer|exists:App\Models\News,id',
             'text' => 'required|string',
             'parent_id' => 'integer|nullable'

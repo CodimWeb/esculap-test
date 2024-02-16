@@ -31,7 +31,6 @@ export default {
             api.post('/api/comments',{
                 parent_id: props.id ? props.id : null,
                 news_id: newsId,
-                user_id: user.id,
                 text: state.commentText
             }).then((res) => {
                 state.commentText = ''

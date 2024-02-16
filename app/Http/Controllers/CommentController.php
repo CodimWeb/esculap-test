@@ -21,7 +21,12 @@ class CommentController extends Controller
      */
     public function store(CommentRequest $request)
     {
-        $comment = Comment::create($request->all());
+        $comment = Comment::create([
+            'parent_id' => $request->post('parent_id'),
+            'news_id' => $request->post('news_id'),
+            'text' => $request->post('text'),
+            'user_id' => auth()->user()->id
+        ]);
         return Comment::where('id', $comment->id)->with('user', 'replies')->first();
     }
 

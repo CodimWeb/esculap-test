@@ -82,7 +82,6 @@ export default {
                     password: state.password,
                 }).then((res) => {
                     localStorage.setItem('access_token', res.data.access_token)
-                    localStorage.setItem('user', JSON.stringify(res.data.user))
                     router.push('/')
                 }).catch(error => {
                     state.errorCredentials = true
